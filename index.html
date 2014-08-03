@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Notes Everywhere</title>
+		<style>
+			.note{
+				border:solid 1px #dedede;
+				border-radius:5px;
+				margin:5px;
+				padding:5px;
+				background: yellow;
+				font-size: larger;
+				font:tahoma;
+			}
+			
+			.add-button{
+				float:right;
+				text-decoration:none;
+				font-weight:900;
+			}
+			
+			.new-note-text{
+				width:100%;
+				padding:10px;
+			}
+			
+			h1{
+				background: #dedede;
+				margin:5px;
+				padding:10px;
+				text-align:center;
+				border-radius:5px;
+			}
+		</style>
+		
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.1.0/knockout-min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/data.js"></script>
+		<script>
+
+		</script>
+	</head>
+	<body>
+		<h1>
+		<a href=# class="add-button" onclick="showAddNewNote();">+</a>
+		My Notes 
+		</h1>
+		<div class="new-note-div note">
+			<input type="text" id="new-note-text" class="new-note-text" placeholder="Add a new note" onblur="saveNote();" />
+			<button onclick="saveNote();">Save</Button>
+		</div>
+		<div data-bind = "foreach: notes">
+			<div class='note' data-bind = "text: content"></div>
+		</div>
+	</body>
+</html>
